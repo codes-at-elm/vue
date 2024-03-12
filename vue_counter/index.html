@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue Counter</title>
+    <style>
+	main {
+  background-color: aliceblue;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div {
+  text-align: center;
+}
+    </style>
+</head>
+<body>
+    <div id="app">
+        <main>
+    <div>
+      <h4>The current count is...</h4>
+      <h1>{{ count }}</h1>
+      <button v-on:click="count--">-</button>
+      <button v-on:click="count++">+</button>
+    </div>
+  </main>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        let app = Vue.createApp({
+            data: function () {
+                return {
+                    count: 0
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>
